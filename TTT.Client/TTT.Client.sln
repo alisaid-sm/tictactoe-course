@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteNetLib", "LiteNetLib.csproj", "{70a59e5e-cb89-b920-1bb4-352a94e7ba24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{878e4b7f-5c76-9722-a283-0741fd867299}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70a59e5e-cb89-b920-1bb4-352a94e7ba24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70a59e5e-cb89-b920-1bb4-352a94e7ba24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{878e4b7f-5c76-9722-a283-0741fd867299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{878e4b7f-5c76-9722-a283-0741fd867299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
