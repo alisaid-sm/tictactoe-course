@@ -5,9 +5,9 @@ using System.Reflection;
 using NetworkShared;
 using NetworkShared.Attributes;
 
-namespace TTT.Server.NetworkShared.Registries
+namespace NetworkShared.Registries
 {
-    public class HandleRegistry
+    public class HandlerRegistry
     {
         private Dictionary<PacketType, Type> _handlers = new Dictionary<PacketType, Type>();
         public Dictionary<PacketType, Type> Handlers

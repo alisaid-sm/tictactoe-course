@@ -1,8 +1,10 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using NetworkShared.Registries;
+using TTT.Server.Data;
 using TTT.Server.Extensions;
-using TTT.Server.NetworkShared.Registries;
+using TTT.Server.Games;
 
 namespace TTT.Server.Infrastructure
 {
@@ -22,7 +24,9 @@ namespace TTT.Server.Infrastructure
             services.AddLogging(c => c.AddSimpleConsole());
             services.AddSingleton<NetworkServer>();
             services.AddSingleton<PacketRegistry>();
-            services.AddSingleton<HandleRegistry>();
+            services.AddSingleton<HandlerRegistry>();
+            services.AddSingleton<UsersManager>();
+            services.AddSingleton<IUserRepository, InMemoryUserRepository>();
             services.AddPacketHandlers();
         }
     }
