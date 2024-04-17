@@ -13,27 +13,27 @@ namespace TTT.Server.Data
         {
             _entities = new List<User>()
             {
-                new User
-                {
-                    Id = "ali1",
-                    Password = "eee",
-                    IsOnline = true,
-                    Score = 10
-                },
-                new User
-                {
-                    Id = "ali2",
-                    Password = "eee",
-                    IsOnline = true,
-                    Score = 35
-                },
-                new User
-                {
-                    Id = "ali3",
-                    Password = "eee",
-                    IsOnline = true,
-                    Score = 21
-                },
+                // new User
+                // {
+                //     Id = "ali1",
+                //     Password = "eee",
+                //     IsOnline = true,
+                //     Score = 10
+                // },
+                // new User
+                // {
+                //     Id = "ali2",
+                //     Password = "eee",
+                //     IsOnline = true,
+                //     Score = 35
+                // },
+                // new User
+                // {
+                //     Id = "ali3",
+                //     Password = "eee",
+                //     IsOnline = true,
+                //     Score = 21
+                // },
             };
         }
 
