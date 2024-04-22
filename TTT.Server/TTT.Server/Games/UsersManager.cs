@@ -12,11 +12,13 @@ namespace TTT.Server.Games
     {
         private Dictionary<int, ServerConnection> _connections;
         private readonly IUserRepository _userRepository;
+        private NetworkServer _server;
 
-        public UsersManager(IUserRepository userRepository)
+        public UsersManager(IUserRepository userRepository, NetworkServer server)
         {
             _connections = new Dictionary<int, ServerConnection>();
             _userRepository = userRepository;
+            _server = server;
         }
 
         public PlayerNetDto[] GetTopPlayers()
@@ -85,6 +87,8 @@ namespace TTT.Server.Games
             {
                 var userId = connection.User.Id;
                 _userRepository.SetOffline(userId);
+
+                NotififyOtherPlayers(peerId);
             }
 
             _connections.Remove(peerId);
@@ -98,6 +102,22 @@ namespace TTT.Server.Games
         public int[] GetOtherConnectionIds(int excludedConnectionId)
         {
             return _connections.Keys.Where(v => v != excludedConnectionId).ToArray();
+        }
+
+        private void NotififyOtherPlayers(int excludedConnectionId)
+        {
+            var rmsg = new Net_OnServerStatus()
+            {
+                PlayersCount = _userRepository.GetTotalCount(),
+                TopPlayers = GetTopPlayers()
+            };
+
+            var otherIds = GetOtherConnectionIds(excludedConnectionId);
+
+            foreach (var connectionId in otherIds)
+            {
+                _server.SendClient(connectionId, rmsg);
+            }
         }
     }
 }

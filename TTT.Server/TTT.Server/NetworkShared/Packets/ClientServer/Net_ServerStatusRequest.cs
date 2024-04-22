@@ -3,7 +3,7 @@ using LiteNetLib.Utils;
 
 namespace NetworkShared.Packets.ClientServer
 {
-    public class Net_ServerStatusRequest : INetPacket
+    public struct Net_ServerStatusRequest : INetPacket
     {
         public PacketType type => PacketType.ServerStatusRequest;
 

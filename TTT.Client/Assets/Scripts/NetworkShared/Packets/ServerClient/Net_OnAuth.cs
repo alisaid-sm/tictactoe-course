@@ -7,7 +7,7 @@ using NetworkShared;
 
 namespace NetworkShared.Packets.ServerClient
 {
-    public class Net_OnAuth : INetPacket
+    public struct Net_OnAuth : INetPacket
     {
         public PacketType type => PacketType.OnAuth;
 

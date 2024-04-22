@@ -7,7 +7,7 @@ using NetworkShared;
 
 namespace NetworkShared.Packets.ServerClient
 {
-    public class Net_OnAuthFail : INetPacket
+    public struct Net_OnAuthFail : INetPacket
     {
         public PacketType type => PacketType.OnAuthFail;
 
